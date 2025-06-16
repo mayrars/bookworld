@@ -1,33 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Slider from "react-slick";
+import Header from './components/Header';
+import image1 from './assets/cuaderno-de-mano-de-alto-angulo.jpg';
+import image2 from './assets/mujer-sonriente-de-vista-frontal-con-libro.jpg';
+import image3 from './assets/personas-de-alto-angulo-leyendo-juntas.jpg';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    responsive: [
+      {
+        breakpoint: 1800,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <section class="bg-white text-black">
+        <div class="container py-0 px-0 mx-auto max-w-[1800px]">
+          <Slider {...settings}>
+            <div>
+              <img src={image1} alt="Logo" />
+            </div>
+            <div>
+              <img src={image2} alt="Logo" />
+            </div>
+            <div>
+              <img src={image3} alt="Logo" />
+            </div>
+          </Slider>
+          <div class="max-w-screen-lg">
+          </div>
+        </div>
+      </section>
     </>
   )
 }
