@@ -35,7 +35,7 @@ function HomePage() {
         ]
     };
     return (
-        <div>
+        <>
             <section className="bg-white text-black">
                 <div className="container py-0 px-0 mx-auto max-w-[1800px]">
                 <Slider {...settings}>
@@ -66,7 +66,7 @@ function HomePage() {
                 <p className="mb-4">Foro y grupo exclusivo: Participa en nuestro grupo de WhatsApp, Telegram o Facebook para mantener la conversación viva.</p>
                 </div>
             </section>
-        </div>
+        </>
     )
 }
 
