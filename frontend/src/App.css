@@ -6,3 +6,6 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
+.principal-text{
+  font-size: 72px;
+}
