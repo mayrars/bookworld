@@ -5,7 +5,8 @@ import Login from './pages/Login/Login';
 import Layout from './Layout';
 import ErrorPage from './pages/Error/ErrorPage';
 import Dashboard from './pages/Dashboard/Dashboard';
-import RegisterBook from './pages/RegisterBook/RegisterBook'; // 👈 Nuevo import
+import RegisterBook from './pages/RegisterBook/RegisterBook';
+import MyBooks from './pages/MyBooks/MyBooks';
 import PrivateRoute from './components/PrivateRoute';
 import SignUp from './pages/Signup/Signup';
 
@@ -20,6 +21,7 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/books/new" element={<RegisterBook />} />
+          <Route path="/my-books" element={<MyBooks />} />
         </Route>
 
         <Route path="*" element={<ErrorPage />} />
